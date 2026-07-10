@@ -1,11 +1,11 @@
 # Open in Safari
 
-A Chrome, Edge, and Firefox browser extension that adds a native "Open in Safari" right-click option for any link on the web. This extension bridges the gap between Chromium browsers and macOS, allowing you to easily send links to Safari with a single click.
+A Chrome, Edge, and Firefox browser extension that adds a native "Open in Safari" right-click option for any link or page on the web. This extension bridges the gap between Chromium browsers and macOS, allowing you to easily send links or your current page to Safari with a single click.
 
 ## How It Works
 
 The project consists of two parts working together:
-1. **The Browser Extension**: A lightweight background script that adds a context menu option to your browser. When you right-click a link and select "Open in Safari", it captures the underlying URL (even if it's hidden behind a Google Search result or obscured text) and securely passes it to the Native Messaging Host.
+1. **The Browser Extension**: A lightweight background script that adds a context menu option to your browser. When you right-click a link or anywhere on a page and select "Open in Safari", it captures the underlying URL (even if it's hidden behind a Google Search result or obscured text) and securely passes it to the Native Messaging Host.
 2. **The Swift Native Host**: A native macOS command-line executable written in Swift. It acts as a bridge, listening for JSON messages from the browser via standard input (`stdio`). When it receives a URL, it uses the native `NSWorkspace` macOS API to command Safari to open the link. 
 
 ## Installation Guide
@@ -40,6 +40,6 @@ The script will automatically:
 - Install the manifest into the required `NativeMessagingHosts` directories for Chrome and Edge.
 
 ## Usage
-Simply right-click on any hyperlink on any webpage, and click **Open in Safari**. The link will instantly open in your Safari browser!
+Simply right-click on any hyperlink or anywhere on a webpage, and click **Open in Safari**. The link or page will instantly open in your Safari browser!
 
 *(Note: If it does not work on the first try after installation, simply click the Refresh icon on the extension page in Chrome to reload its permissions).*
